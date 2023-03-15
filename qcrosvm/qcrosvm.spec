@@ -16,20 +16,19 @@ QCrosVM Support.
 %prep
 %setup -q -n qcrosvm
 mkdir -p %{_builddir}/external
-mkdir -p %{_builddir}/vendor/qcom/opensource
-mv %{_builddir}/qcrosvm %{_builddir}/vendor/qcom/opensource
+mkdir -p %{_builddir}/vendor/qcom/opensource/kiumd/
+mv %{_builddir}/qcrosvm %{_builddir}/vendor/qcom/opensource/kiumd/
 mv %{_builddir}/rust %{_builddir}/external/
 mv %{_builddir}/crosvm %{_builddir}/external/
 mv %{_builddir}/minijail %{_builddir}/external/
-ln -sf %{_builddir}/vendor/qcom/opensource/qcrosvm %{_builddir}/qcrosvm
+ln -sf %{_builddir}/vendor/qcom/opensource/kiumd/qcrosvm %{_builddir}/qcrosvm
 
 %build
 %cargo_build -a
 
 %install
 mkdir -p %{buildroot}/%{_bindir}
-install -m 0755 -t  %{buildroot}/%{_bindir} %{_builddir}/vendor/qcom/opensource/qcrosvm/target/release/%{name}
+install -m 0755 -t  %{buildroot}/%{_bindir} %{_builddir}/vendor/qcom/opensource/kiumd/qcrosvm/target/release/%{name}
 
 %files
-%license NOTICE
 %{_bindir}/qcrosvm

@@ -12,9 +12,9 @@ path = "src/lib.rs"
 path = "src/lib.rs"
 
 [dependencies]
-#adapter = { path = "../adapter" }
-base = { path = "../../../../../external/crosvm/base" }
-devices = { path = "../../../../../external/crosvm/devices" }
+#adapter = { path = "../../adapter" }
+base = { path = "../../../../../../external/crosvm/base" }
+devices = { path = "../../../../../../external/crosvm/devices" }
 log = "*"
-sync = { path = "../../../../../external/crosvm/common/sync" }
-vm_memory = { path = "../../../../../external/crosvm/vm_memory" }
+sync = { path = "../../../../../../external/crosvm/common/sync" }
+vm_memory = { path = "../../../../../../external/crosvm/vm_memory" }
