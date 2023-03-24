@@ -1,3 +1,6 @@
+# If kversion isn't defined on the rpmbuild line, define it here.
+%{!?kversion: %define kversion %(uname -r)}
+
 Name: kiumd-headers
 Version: 1.0
 Release: r0
@@ -5,9 +8,8 @@ Summary: install kiumd uapi headers
 BuildArch: noarch
 License: GPL-2.0-only WITH Linux-syscall-note
 Source0: %{name}-%{version}.tar.gz
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
-BuildRequires: kernel-devel
+BuildRequires: kernel-automotive-devel-uname-r = %{kversion}
 
 %description
 This contains headers userspace API and DLKM conf files.
@@ -17,7 +19,7 @@ This contains headers userspace API and DLKM conf files.
 
 KERNEL_SRC="/usr/src/kernels"
 CURDIR=${PWD}
-cd ${KERNEL_SRC}/*
+cd ${KERNEL_SRC}/%{kversion}/
 scripts/headers_install.sh ${CURDIR}/kiumd.h ${CURDIR}/kiumd.h
 scripts/headers_install.sh ${CURDIR}/scmioctl.h ${CURDIR}/scmioctl.h
 
@@ -32,11 +34,8 @@ cp vfioiommu.conf "$RPM_BUILD_ROOT/usr/lib/modules-load.d"
 cp appspinctrl.conf "$RPM_BUILD_ROOT/usr/lib/modules-load.d"
 
 %files
-/usr/include/uapi/misc/kiumd.h
-/usr/include/uapi/misc/scmioctl.h
+%{_includedir}/uapi/misc/kiumd.h
+%{_includedir}/uapi/misc/scmioctl.h
 /usr/lib/modules-load.d/kiumd.conf
 /usr/lib/modules-load.d/vfioiommu.conf
 /usr/lib/modules-load.d/appspinctrl.conf
-
-
-
