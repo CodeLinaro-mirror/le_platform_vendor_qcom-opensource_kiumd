@@ -1,0 +1,14 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+[Unit]
+Description=Mount firware out of fstab
+
+[Mount]
+What=/dev/sde5
+Where=/firmware/qcom/sa8775p
+Type=vfat
+Options=defaults
+
+[Install]
+WantedBy=multi-user.target

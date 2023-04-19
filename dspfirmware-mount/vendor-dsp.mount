@@ -1,0 +1,15 @@
+# Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+[Unit]
+Description=Mount dspshell out of fstab
+
+[Mount]
+What=/dev/sde11
+Where=/vendor/dsp
+Type=ext4
+Options=defaults
+
+[Install]
+WantedBy=multi-user.target
+
