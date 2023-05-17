@@ -6,6 +6,10 @@ BuildArch: noarch
 License: BSD-3-Clause-Clear
 Source0: %{name}-%{version}.tar.gz
 
+Requires: systemd
+BuildRequires: systemd systemd-rpm-macros
+%{?systemd_requires}
+
 %description
 This rpm mount dsp firmware.
 
@@ -24,6 +28,10 @@ install -D -m 777 cdsp0_cfg %{buildroot}%{_sysconfdir}/sysconfig/
 install -D -m 777 cdsp1_cfg %{buildroot}%{_sysconfdir}/sysconfig/
 install -D -m 777 gpdsp0_cfg %{buildroot}%{_sysconfdir}/sysconfig/
 install -D -m 777 gpdsp1_cfg %{buildroot}%{_sysconfdir}/sysconfig/
+
+%post
+systemctl enable --now firmware-qcom-sa8775p.automount
+systemctl enable --now vendor-dsp.automount
 
 %files
 %{_unitdir}/firmware-qcom-sa8775p.automount
