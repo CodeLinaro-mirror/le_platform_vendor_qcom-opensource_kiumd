@@ -1,3 +1,3 @@
 msm_pil_image=/firmware/qcom/sa8775p/image/gpdsp1.mbn
-msm_pil_mdt_image=/mnt/etc/images/gpdsp1.mdt
+msm_pil_mdt_image=/firmware/qcom/sa8775p/image/gpdsp1.mdt
 msm_debug=OFF
