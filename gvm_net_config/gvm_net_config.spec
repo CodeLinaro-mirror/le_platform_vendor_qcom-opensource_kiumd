@@ -19,7 +19,7 @@ This rpm will install the systemd service gvm_net_config.service.
 gmv_net_config.service will be used to setup the network bridge for gvm.
 
 %prep
-%setup -q
+%setup -qn %{name}
 
 %install
 mkdir -p %{buildroot}%{_unitdir}
