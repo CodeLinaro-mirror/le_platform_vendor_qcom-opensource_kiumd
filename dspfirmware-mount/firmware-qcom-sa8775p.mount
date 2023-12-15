@@ -8,7 +8,7 @@ Description=Mount firware out of fstab
 What=/dev/sde5
 Where=/firmware/qcom/sa8775p
 Type=vfat
-Options=defaults,ro
+Options=ro
 
 [Install]
 WantedBy=multi-user.target
