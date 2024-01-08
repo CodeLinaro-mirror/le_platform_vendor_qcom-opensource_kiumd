@@ -8,7 +8,7 @@ Description=Mount dspshell out of fstab
 What=/dev/sde11
 Where=/vendor/dsp
 Type=ext4
-Options=ro
+Options=defaults,ro
 
 [Install]
 WantedBy=multi-user.target

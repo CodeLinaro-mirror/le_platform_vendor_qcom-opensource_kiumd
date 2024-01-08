@@ -6,7 +6,7 @@ Description=Mount firware out of fstab
 
 [Automount]
 Where=/firmware/qcom/sa8775p
-Options=ro
+Options=defaults,ro
 
 [Install]
 WantedBy=multi-user.target
