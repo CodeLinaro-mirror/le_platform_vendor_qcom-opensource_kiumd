@@ -5,7 +5,7 @@
 Description=Mount firware out of fstab
 
 [Mount]
-What=/dev/sde5
+What=/dev/disk/by-partlabel/modem_a
 Where=/firmware/qcom/sa8775p
 Type=vfat
 Options=defaults
