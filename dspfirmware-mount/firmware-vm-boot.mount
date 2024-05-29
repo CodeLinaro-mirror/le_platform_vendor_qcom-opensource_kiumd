@@ -5,7 +5,7 @@
 Description=Mount VM boot Images
 
 [Mount]
-What=/dev/disk/by-partlabel/la_boot_a
+What=/dev/disk/by-partlabel/la_boot
 Where=/firmware/vm/boot
 Type=ext4
 Options=defaults
