@@ -30,6 +30,7 @@ install -D -m 777 cdsp0_cfg %{buildroot}%{_sysconfdir}/sysconfig/
 install -D -m 777 cdsp1_cfg %{buildroot}%{_sysconfdir}/sysconfig/
 install -D -m 777 gpdsp0_cfg %{buildroot}%{_sysconfdir}/sysconfig/
 install -D -m 777 gpdsp1_cfg %{buildroot}%{_sysconfdir}/sysconfig/
+install -D -m 777 99-persist-storage-ab.rules %{buildroot}%{_sysconfdir}/udev/rules.d/99-persist-storage-ab.rules
 
 %post
 systemctl enable --now firmware-qcom-sa8775p.automount
@@ -48,3 +49,4 @@ systemctl enable --now vendor-dsp.automount
 %{_sysconfdir}/sysconfig/cdsp1_cfg
 %{_sysconfdir}/sysconfig/gpdsp0_cfg
 %{_sysconfdir}/sysconfig/gpdsp1_cfg
+%{_sysconfdir}/udev/rules.d/99-persist-storage-ab.rules
