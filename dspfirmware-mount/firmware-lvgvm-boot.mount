@@ -8,7 +8,7 @@ Description=Mount LV GVM boot Images
 What=/dev/disk/by-partlabel/lv_boot_a
 Where=/firmware/lvgvm/boot
 Type=ext4
-Options=defaults
+Options=defaults,nofail
 
 [Install]
 WantedBy=multi-user.target
