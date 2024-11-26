@@ -1,0 +1,4 @@
+msm_pil_image=/firmware/qcom/sa8797p/image/cdsp0.mbn
+msm_pil_mdt_image=/firmware/qcom/sa8797p/image/cdsp0.mdt
+msm_debug=OFF
+safety_mode=ON
