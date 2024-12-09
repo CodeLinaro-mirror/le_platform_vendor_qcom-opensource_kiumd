@@ -1,0 +1,3 @@
+msm_pil_image=/firmware/qcom/sa8797p/image/gpdsp1.mbn
+msm_pil_mdt_image=/firmware/qcom/sa8797p/image/gpdsp1.mdt
+msm_debug=OFF
