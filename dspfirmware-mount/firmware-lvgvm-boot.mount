@@ -5,7 +5,7 @@
 Description=Mount LV GVM boot Images
 
 [Mount]
-What=/dev/disk/by-partlabel/lv_boot
+What=/dev/disk/by-partlabel/lv_bootloader
 Where=/firmware/lvgvm/boot
 Type=ext4
 Options=defaults,nofail
