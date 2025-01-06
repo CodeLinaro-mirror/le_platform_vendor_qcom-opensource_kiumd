@@ -8,7 +8,6 @@ PartOf=qcrosvm.service
 Type=oneshot
 RemainAfterExit=yes
 
-ExecStartPre=/bin/sh -c "systemctl is-active sys-subsystem-net-devices-vmtap0.device"
 ExecStart=/usr/local/bin/gvm_net_config.sh
 Restart=on-failure
 RestartSec=3
