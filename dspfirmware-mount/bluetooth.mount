@@ -1,0 +1,15 @@
+# Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+[Unit]
+Description=Mount bluetooth out of fstab
+
+[Mount]
+What=/dev/disk/by-partlabel/bluetooth
+Where=/bluetooth
+Type=auto
+Options=defaults,nofail
+
+[Install]
+WantedBy=multi-user.target
+
