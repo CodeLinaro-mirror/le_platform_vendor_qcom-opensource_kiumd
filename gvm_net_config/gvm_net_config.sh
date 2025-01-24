@@ -6,6 +6,10 @@ echo "gvm_net_config: wait for vmtap0 to be available"
 /lib/systemd/systemd-networkd-wait-online -i vmtap0:off
 echo "gvm_net_config: configure vmtap0"
 
+echo "gvm_net_config: wait for br0 to be available"
+/lib/systemd/systemd-networkd-wait-online -i br0:off
+echo "gvm_net_config: configure br0"
+
 # add vmtap0 to bridge br0
 ip link set dev vmtap0 master br0
 ifconfig vmtap0 0.0.0.0
