@@ -25,6 +25,8 @@ install -D -m 777 firmware-vm-boot.automount %{buildroot}%{_unitdir}
 install -D -m 777 firmware-vm-boot.mount %{buildroot}%{_unitdir}
 install -D -m 777 vendor-dsp.automount %{buildroot}%{_unitdir}
 install -D -m 777 vendor-dsp.mount %{buildroot}%{_unitdir}
+install -D -m 777 bluetooth.automount %{buildroot}%{_unitdir}
+install -D -m 777 bluetooth.mount %{buildroot}%{_unitdir}
 install -D -m 777 lpass_cfg %{buildroot}%{_sysconfdir}/sysconfig/
 install -D -m 777 cdsp0_cfg %{buildroot}%{_sysconfdir}/sysconfig/
 install -D -m 777 cdsp1_cfg %{buildroot}%{_sysconfdir}/sysconfig/
@@ -36,6 +38,7 @@ install -D -m 777 99-persist-storage-ab.rules %{buildroot}%{_sysconfdir}/udev/ru
 systemctl enable --now firmware-qcom-sa8775p.automount
 systemctl enable --now firmware-vm-boot.automount
 systemctl enable --now vendor-dsp.automount
+systemctl enable --now bluetooth.automount
 
 %files
 %{_unitdir}/firmware-qcom-sa8775p.automount
@@ -44,6 +47,8 @@ systemctl enable --now vendor-dsp.automount
 %{_unitdir}/firmware-vm-boot.mount
 %{_unitdir}/vendor-dsp.automount
 %{_unitdir}/vendor-dsp.mount
+%{_unitdir}/bluetooth.mount
+%{_unitdir}/bluetooth.automount
 %{_sysconfdir}/sysconfig/lpass_cfg
 %{_sysconfdir}/sysconfig/cdsp0_cfg
 %{_sysconfdir}/sysconfig/cdsp1_cfg

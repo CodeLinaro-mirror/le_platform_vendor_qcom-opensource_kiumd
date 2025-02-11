@@ -1,0 +1,14 @@
+# Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+[Unit]
+Description=Mount firware out of fstab
+
+[Mount]
+What=/dev/disk/by-partlabel/modem
+Where=/firmware/qcom/sa8797p
+Type=vfat
+Options=defaults
+
+[Install]
+WantedBy=multi-user.target
