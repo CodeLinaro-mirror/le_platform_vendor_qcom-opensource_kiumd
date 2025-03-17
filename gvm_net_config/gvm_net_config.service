@@ -7,7 +7,6 @@ After=setup-network-host.service
 
 [Service]
 Type=oneshot
-RemainAfterExit=yes
 
 ExecStart=/usr/local/bin/gvm_net_config.sh
 Restart=on-failure
