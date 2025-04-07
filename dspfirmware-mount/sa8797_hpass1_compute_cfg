@@ -1,0 +1,5 @@
+msm_pil_image=/firmware/qcom/sa8797p/image/adsp1_computelite.mbn
+msm_pil_mdt_image=/firmware/qcom/sa8797p/image/adsp1_computelite.mdt
+msm_pil_dtb_mdt=/firmware/qcom/sa8797p/image/adsp1_computelite_dtb.mdt
+msm_pil_dtb_image=/firmware/qcom/sa8797p/image/adsp1_computelite_dtbs.elf
+msm_debug=OFF
