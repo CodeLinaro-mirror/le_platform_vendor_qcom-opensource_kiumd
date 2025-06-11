@@ -1,0 +1,14 @@
+# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+# SPDX-License-Identifier: BSD-3-Clause-Clear
+
+[Unit]
+Description=Mount LV GVM boot Images
+
+[Mount]
+What=/dev/disk/by-partlabel/lv_bootloader
+Where=/firmware/vm/boot/autoghgvmlv
+Type=ext4
+Options=defaults,nofail
+
+[Install]
+WantedBy=multi-user.target
