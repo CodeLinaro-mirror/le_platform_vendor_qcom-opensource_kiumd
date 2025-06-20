@@ -1,3 +1,3 @@
-msm_pil_image=/firmware/qcom/sa8797p/image/adsp.mbn
-msm_pil_mdt_image=/firmware/qcom/sa8797p/image/adsp.mdt
+msm_pil_image=/lib/firmware/qcom/image/adsp.mbn
+msm_pil_mdt_image=/lib/firmware/qcom/image/adsp.mdt
 msm_debug=OFF
