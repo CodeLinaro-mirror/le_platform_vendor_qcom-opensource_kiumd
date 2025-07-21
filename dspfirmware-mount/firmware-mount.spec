@@ -21,8 +21,8 @@ mkdir -p %{buildroot}%{_unitdir}
 mkdir -p %{buildroot}%{_sysconfdir}/sysconfig/
 install -D -m 777 firmware-qcom-sa8775p.automount %{buildroot}%{_unitdir}
 install -D -m 777 firmware-qcom-sa8775p.mount %{buildroot}%{_unitdir}
-install -D -m 777 firmware-vm-boot.automount %{buildroot}%{_unitdir}
-install -D -m 777 firmware-vm-boot.mount %{buildroot}%{_unitdir}
+install -D -m 777 firmware-vm-boot-autoghgvm.automount %{buildroot}%{_unitdir}
+install -D -m 777 firmware-vm-boot-autoghgvm.mount %{buildroot}%{_unitdir}
 install -D -m 777 vendor-dsp.automount %{buildroot}%{_unitdir}
 install -D -m 777 vendor-dsp.mount %{buildroot}%{_unitdir}
 install -D -m 777 bluetooth.automount %{buildroot}%{_unitdir}
@@ -36,15 +36,15 @@ install -D -m 777 99-persist-storage-ab.rules %{buildroot}%{_sysconfdir}/udev/ru
 
 %post
 systemctl enable --now firmware-qcom-sa8775p.automount
-systemctl enable --now firmware-vm-boot.automount
+systemctl enable --now firmware-vm-boot-autoghgvm.automount
 systemctl enable --now vendor-dsp.automount
 systemctl enable --now bluetooth.automount
 
 %files
 %{_unitdir}/firmware-qcom-sa8775p.automount
 %{_unitdir}/firmware-qcom-sa8775p.mount
-%{_unitdir}/firmware-vm-boot.automount
-%{_unitdir}/firmware-vm-boot.mount
+%{_unitdir}/firmware-vm-boot-autoghgvm.automount
+%{_unitdir}/firmware-vm-boot-autoghgvm.mount
 %{_unitdir}/vendor-dsp.automount
 %{_unitdir}/vendor-dsp.mount
 %{_unitdir}/bluetooth.mount
