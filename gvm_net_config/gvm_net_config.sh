@@ -18,5 +18,10 @@ echo "gvm_net_config: wait for vmtap1 to be available"
 /lib/systemd/systemd-networkd-wait-online -i vmtap1:off
 echo "gvm_net_config: configure vmtap1"
 
-# set vmtap1 ip to 192.168.7.1, do not add to any bridge
-ifconfig vmtap1 192.168.7.1
+echo "gvm_net_config: wait for br1 to be available"
+/lib/systemd/systemd-networkd-wait-online -i br1:off
+echo "gvm_net_config: configure br1"
+
+# add vmtap1 to bridge br1
+ip link set dev vmtap1 master br1
+ifconfig vmtap1 0.0.0.0
