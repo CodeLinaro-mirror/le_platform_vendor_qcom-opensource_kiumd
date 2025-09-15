@@ -3,4 +3,3 @@ msm_pil_mdt_image=/firmware/qcom/sa8797p/image/cdsp3.mdt
 msm_pil_dtb_mdt=/firmware/qcom/sa8797p/image/cdsp3_dtb.mdt
 msm_pil_dtb_image=/firmware/qcom/sa8797p/image/cdsp3_dtbs.elf
 msm_debug=OFF
-safety_mode=ON
