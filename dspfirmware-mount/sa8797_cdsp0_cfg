@@ -1,5 +1,5 @@
-msm_pil_image=/firmware/qcom/sa8797p/image/cdsp.mbn
-msm_pil_mdt_image=/firmware/qcom/sa8797p/image/cdsp.mdt
-msm_pil_dtb_mdt=/firmware/qcom/sa8797p/image/cdsp_dtb.mdt
-msm_pil_dtb_image=/firmware/qcom/sa8797p/image/cdsp_dtbs.elf
+msm_pil_image=/lib/firmware/qcom/image/cdsp.mbn
+msm_pil_mdt_image=/lib/firmware/qcom/image/cdsp.mdt
+msm_pil_dtb_mdt=/lib/firmware/qcom/image/cdsp_dtb.mdt
+msm_pil_dtb_image=/lib/firmware/qcom/image/cdsp_dtbs.elf
 msm_debug=OFF
