@@ -6,7 +6,6 @@ Description=Mount dspshell out of fstab
 
 [Automount]
 Where=/vendor/dsp
-Options=defaults
 
 [Install]
 WantedBy=multi-user.target
