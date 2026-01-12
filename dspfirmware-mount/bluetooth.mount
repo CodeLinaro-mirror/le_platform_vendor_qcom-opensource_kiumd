@@ -8,7 +8,7 @@ Description=Mount bluetooth out of fstab
 What=/dev/disk/by-partlabel/bluetooth
 Where=/bluetooth
 Type=auto
-Options=defaults,nofail
+Options=ro,defaults,nofail
 
 [Install]
 WantedBy=multi-user.target

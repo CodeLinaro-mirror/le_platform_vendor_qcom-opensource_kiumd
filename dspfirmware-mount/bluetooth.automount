@@ -6,7 +6,6 @@ Description=Mount bluetooth out of fstab
 
 [Automount]
 Where=/bluetooth
-Options=defaults,nofail
 
 [Install]
 WantedBy=multi-user.target

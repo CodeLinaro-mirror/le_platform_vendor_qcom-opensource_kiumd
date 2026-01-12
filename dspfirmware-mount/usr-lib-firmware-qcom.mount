@@ -8,7 +8,7 @@ Description=Mount firware out of fstab
 What=/dev/disk/by-partlabel/modem
 Where=/usr/lib/firmware/qcom
 Type=vfat
-Options=defaults
+Options=ro,defaults
 
 [Install]
 WantedBy=multi-user.target

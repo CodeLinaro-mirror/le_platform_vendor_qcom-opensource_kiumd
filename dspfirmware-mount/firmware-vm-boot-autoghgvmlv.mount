@@ -8,7 +8,7 @@ Description=Mount LV GVM boot Images
 What=/dev/disk/by-partlabel/lv_bootloader
 Where=/firmware/vm/boot/autoghgvmlv
 Type=ext4
-Options=defaults,nofail
+Options=ro,defaults,nofail
 
 [Install]
 WantedBy=multi-user.target
