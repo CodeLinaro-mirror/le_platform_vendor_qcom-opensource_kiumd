@@ -6,7 +6,6 @@ Description=Mount firware out of fstab
 
 [Automount]
 Where=/usr/lib/firmware/qcom
-Options=defaults
 
 [Install]
 WantedBy=multi-user.target
