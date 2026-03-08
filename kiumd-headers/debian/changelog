@@ -1,0 +1,5 @@
+kiumd-headers (1.0.0) unstable; urgency=medium
+
+  * Converted from RPM spec file.
+
+ -- leiwang <leiwan@qti.qualcomm.com>  Sun, 08 Mar 2026 08:00:59 +0000

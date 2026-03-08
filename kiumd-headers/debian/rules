@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_install:
+	install -d $(CURDIR)/debian/tmp/usr/include/uapi/misc/
+	install -d $(CURDIR)/debian/tmp/usr/lib/modules-load.d
+	install -m 0644 kiumd.conf $(CURDIR)/debian/tmp/usr/lib/modules-load.d
+	install -m 0644 vfioiommu.conf $(CURDIR)/debian/tmp/usr/lib/modules-load.d
+	install -m 0644 appspinctrl.conf $(CURDIR)/debian/tmp/usr/lib/modules-load.d
+	cd /usr/src/linux-headers-6.6.110 && scripts/headers_install.sh  $(CURDIR)/scmioctl.h ${CURDIR}/debian/tmp/usr/include/uapi/misc/scmioctl.h
+	dh_auto_install --destdir=debian/tmp
