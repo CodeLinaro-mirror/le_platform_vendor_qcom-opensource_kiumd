@@ -1,0 +1,43 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_install:
+	dh_auto_install
+	install -d -p debian/dsp-firmware-mount/vendor/dsp
+	install -m 0644 files/mnt_fs.conf -D debian/dsp-firmware-mount/lib/modules-load.d/mnt_fs.conf
+	install -m 0644 vendor-dsp.mount -D debian/dsp-firmware-mount/lib/systemd/system/vendor-dsp.mount
+	install -m 0644 vendor-dsp.automount -D debian/dsp-firmware-mount/lib/systemd/system/vendor-dsp.automount
+	sed -i '/^Options=/s/defaults/&,context=system_u:object_r:dsp_file_t:s0/' debian/dsp-firmware-mount/lib/systemd/system/vendor-dsp.mount
+	install -d -p debian/dsp-firmware-mount/firmware/vm/boot/autoghgvm
+	install -D -m 0777 firmware-vm-boot-autoghgvm.automount \
+	debian/dsp-firmware-mount/lib/systemd/system/firmware-vm-boot-autoghgvm.automount
+	install -D -m 0777 firmware-vm-boot-autoghgvm.mount \
+	debian/dsp-firmware-mount/lib/systemd/system/firmware-vm-boot-autoghgvm.mount
+	sed -i '/^Options=/s/defaults/&,context=system_u:object_r:qcrosvm_boot_t:s0/' \
+	debian/dsp-firmware-mount/lib/systemd/system/firmware-vm-boot-autoghgvm.mount
+	install -m 0755 bluetooth.mount -D debian/dsp-firmware-mount/lib/systemd/system/bluetooth.mount
+	install -m 0755 bluetooth.automount -D debian/dsp-firmware-mount/lib/systemd/system/bluetooth.automount
+	install -D -m 0755 bluetooth.mount debian/dsp-firmware-mount/lib/systemd/system/bluetooth.mount
+	install -D -m 0755 bluetooth.automount debian/dsp-firmware-mount/lib/systemd/system/bluetooth.automount
+	install -m 0644 99-persist-storage-ab.rules -D debian/dsp-firmware-mount/etc/udev/rules.d/99-persist-storage-ab.rules
+	install -d -p debian/dsp-firmware-mount/lib/firmware/qcom
+	install -m 0644 usr-lib-firmware-qcom.mount -D debian/dsp-firmware-mount/lib/systemd/system/usr-lib-firmware-qcom.mount
+	install -m 0644 usr-lib-firmware-qcom.automount -D debian/dsp-firmware-mount/lib/systemd/system/usr-lib-firmware-qcom.automount
+	#gen5()
+	install -d -p debian/dsp-firmware-mount/firmware/qcom/sa8797p
+	install -d debian/dsp-firmware-mount/etc/sysconfig/
+	install -m 0755 sa8797_hpass0_cfg debian/dsp-firmware-mount/etc/sysconfig/sa8797_hpass0_cfg
+	install -m 0755 sa8797_hpass1_cfg debian/dsp-firmware-mount/etc/sysconfig/sa8797_hpass1_cfg
+	install -m 0755 sa8797_hpass2_cfg debian/dsp-firmware-mount/etc/sysconfig/sa8797_hpass2_cfg
+	install -m 0755 sa8797_cdsp0_cfg debian/dsp-firmware-mount/etc/sysconfig/sa8797_cdsp0_cfg
+	install -m 0755 sa8797_cdsp1_cfg debian/dsp-firmware-mount/etc/sysconfig/sa8797_cdsp1_cfg
+	install -m 0755 sa8797_cdsp2_cfg debian/dsp-firmware-mount/etc/sysconfig/sa8797_cdsp2_cfg
+	install -m 0755 sa8797_cdsp3_cfg debian/dsp-firmware-mount/etc/sysconfig/sa8797_cdsp3_cfg
+	install -m 0755 sa8797_soccp_cfg debian/dsp-firmware-mount/etc/sysconfig/sa8797_soccp_cfg
+	install -m 0755 sa8797_hpass0_compute_cfg debian/dsp-firmware-mount/etc/sysconfig/sa8797_hpass0_compute_cfg
+	install -m 0755 sa8797_hpass1_compute_cfg debian/dsp-firmware-mount/etc/sysconfig/sa8797_hpass1_compute_cfg
+	install -m 0755 sa8797_hpass2_compute_cfg debian/dsp-firmware-mount/etc/sysconfig/sa8797_hpass2_compute_cfg
+
+
+

@@ -1,0 +1,13 @@
+Source: dsp-firmware-mount
+Section: devel
+Priority: optional
+Maintainer: xrao <xrao@qti.qualcomm.com>
+Build-Depends: systemd, debhelper-compat (= 13)
+Standards-Version: 4.6.0
+Homepage: 
+
+Package: dsp-firmware-mount
+Architecture: arm64
+Depends: systemd, udev
+Description: mount dsp firmware
+ This rpm mount dsp firmware.
