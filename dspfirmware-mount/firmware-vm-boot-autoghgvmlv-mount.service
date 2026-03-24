@@ -4,6 +4,9 @@
 [Unit]
 Description=Mount lv bootloader symlinked by disksymlink service
 After=disksymlink.service
+DefaultDependencies=no
+Conflicts=shutdown.target
+Before=shutdown.target qcrosvm_lv.service
 
 [Service]
 User=root
