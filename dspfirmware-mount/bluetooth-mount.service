@@ -4,6 +4,9 @@
 [Unit]
 Description=Mount bluetooth symlinked by disksymlink service
 After=disksymlink.service
+DefaultDependencies=no
+Conflicts=shutdown.target
+Before=shutdown.target qcrosvm.service
 
 [Service]
 User=root
@@ -12,7 +15,7 @@ SupplementaryGroups=disk
 RemainAfterExit=yes
 Type=oneshot
 
-ExecStarti=/bin/mount -t auto -o ro,defaults,nofail /dev/disk/by-partlabel/bluetooth /bluetooth
+ExecStart=/bin/mount -t auto -o ro,defaults,nofail /dev/disk/by-partlabel/bluetooth /bluetooth
 
 [Install]
 WantedBy=multi-user.target

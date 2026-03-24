@@ -4,6 +4,9 @@
 [Unit]
 Description=Mount la bootloader symlinked by disksymlink service
 After=disksymlink.service
+DefaultDependencies=no
+Conflicts=shutdown.target
+Before=shutdown.target qcrosvm.service
 
 [Service]
 User=root
@@ -16,4 +19,3 @@ ExecStart=/bin/mount -t ext4 -o ro,defaults /dev/disk/by-partlabel/la_bootloader
 
 [Install]
 WantedBy=multi-user.target
-
