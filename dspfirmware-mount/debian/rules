@@ -9,13 +9,6 @@ override_dh_auto_install:
 	install -m 0644 vendor-dsp.mount -D debian/dsp-firmware-mount/lib/systemd/system/vendor-dsp.mount
 	install -m 0644 vendor-dsp.automount -D debian/dsp-firmware-mount/lib/systemd/system/vendor-dsp.automount
 	sed -i '/^Options=/s/defaults/&,context=system_u:object_r:dsp_file_t:s0/' debian/dsp-firmware-mount/lib/systemd/system/vendor-dsp.mount
-	install -d -p debian/dsp-firmware-mount/firmware/vm/boot/autoghgvm
-	install -D -m 0777 firmware-vm-boot-autoghgvm.automount \
-	debian/dsp-firmware-mount/lib/systemd/system/firmware-vm-boot-autoghgvm.automount
-	install -D -m 0777 firmware-vm-boot-autoghgvm.mount \
-	debian/dsp-firmware-mount/lib/systemd/system/firmware-vm-boot-autoghgvm.mount
-	sed -i '/^Options=/s/defaults/&,context=system_u:object_r:qcrosvm_boot_t:s0/' \
-	debian/dsp-firmware-mount/lib/systemd/system/firmware-vm-boot-autoghgvm.mount
 	install -m 0755 bluetooth.mount -D debian/dsp-firmware-mount/lib/systemd/system/bluetooth.mount
 	install -m 0755 bluetooth.automount -D debian/dsp-firmware-mount/lib/systemd/system/bluetooth.automount
 	install -D -m 0755 bluetooth.mount debian/dsp-firmware-mount/lib/systemd/system/bluetooth.mount
