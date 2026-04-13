@@ -15,6 +15,7 @@ SupplementaryGroups=disk
 RemainAfterExit=yes
 Type=oneshot
 
+ExecStartPre=/bin/mkdir -p /firmware/vm/boot/autoghgvm
 ExecStart=/bin/mount -t ext4 -o ro,defaults /dev/disk/by-partlabel/la_bootloader /firmware/vm/boot/autoghgvm
 
 [Install]
