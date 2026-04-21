@@ -15,6 +15,7 @@ SupplementaryGroups=disk
 RemainAfterExit=yes
 Type=oneshot
 
+ExecStartPre=/bin/mkdir -p /bluetooth
 ExecStart=/bin/mount -t auto -o ro,defaults,nofail /dev/disk/by-partlabel/bluetooth /bluetooth
 
 [Install]
