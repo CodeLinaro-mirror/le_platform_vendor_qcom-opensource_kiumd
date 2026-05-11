@@ -11,5 +11,9 @@ Type=auto
 Options=ro,defaults,nofail
 
 [Install]
-WantedBy=multi-user.target
-
+WantedBy=safe-ivi.target
+WantedBy=nonsafe-ivi.target
+WantedBy=flex.target
+WantedBy=slt.target
+WantedBy=single-gvm.target
+WantedBy=multi-gvm.target

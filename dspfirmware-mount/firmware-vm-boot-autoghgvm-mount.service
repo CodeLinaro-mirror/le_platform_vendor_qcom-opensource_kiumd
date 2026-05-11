@@ -4,6 +4,9 @@
 [Unit]
 Description=Mount la bootloader symlinked by disksymlink service
 After=disksymlink.service
+DefaultDependencies=no
+Conflicts=shutdown.target
+Before=shutdown.target qcrosvm.service
 
 [Service]
 User=root
