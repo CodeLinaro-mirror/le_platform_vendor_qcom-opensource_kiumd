@@ -5,7 +5,7 @@
 Description=Mount dspshell out of fstab
 
 [Mount]
-What=/dev/disk/by-partlabel/dsp
+What=/dev/disk/by-partlabel/dsp_a
 Where=/vendor/dsp
 Type=ext4
 Options=ro,defaults
