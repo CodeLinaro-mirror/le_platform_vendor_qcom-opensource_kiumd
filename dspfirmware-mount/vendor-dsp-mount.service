@@ -16,7 +16,7 @@ RemainAfterExit=yes
 Type=oneshot
 
 ExecStartPre=/bin/mkdir -p /vendor/dsp
-ExecStart=/bin/bash -c 'mountpoint -q /vendor/dsp || mount -t ext4 -o ro,defaults,nofail /dev/disk/by-partlabel/dsp /vendor/dsp'
+ExecStart=/bin/sh -c 'mountpoint -q /vendor/dsp || mount -t ext4 -o ro,defaults,nofail /dev/disk/by-partlabel/dsp /vendor/dsp'
 
 [Install]
 WantedBy=multi-user.target
