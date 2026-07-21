@@ -3,3 +3,4 @@ msm_pil_mdt_image=/lib/firmware/qcom/image/cdsp.mdt
 msm_pil_dtb_mdt=/lib/firmware/qcom/image/cdsp_dtb.mdt
 msm_pil_dtb_image=/lib/firmware/qcom/image/cdsp_dtbs.elf
 msm_debug=OFF
+safety_mode=ON
