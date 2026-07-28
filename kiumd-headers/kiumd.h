@@ -115,6 +115,10 @@ struct kiumd_smmu_mmio_map {
 	char *reg_name;
 };
 
+struct kiumd_user_unmap {
+	__u32 id;
+};
+
 struct kiumd_mem_info {
 	__u64 offset;
 	__u64 size;
