@@ -17,6 +17,8 @@ override_dh_auto_install:
 	install -d -p debian/dsp-firmware-mount/lib/firmware/qcom
 	install -m 0644 usr-lib-firmware-qcom.mount -D debian/dsp-firmware-mount/lib/systemd/system/usr-lib-firmware-qcom.mount
 	install -m 0644 usr-lib-firmware-qcom.automount -D debian/dsp-firmware-mount/lib/systemd/system/usr-lib-firmware-qcom.automount
+	ln -sf /dev/null debian/dsp-firmware-mount/lib/systemd/system/usr-lib-firmware-qcom.mount
+	ln -sf /dev/null debian/dsp-firmware-mount/lib/systemd/system/usr-lib-firmware-qcom.automount
 	#gen5()
 	install -d -p debian/dsp-firmware-mount/firmware/qcom/sa8797p
 	install -d debian/dsp-firmware-mount/etc/sysconfig/
